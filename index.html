@@ -15,7 +15,7 @@
   </head>
   <body>
     <section class="tracker" id="tracker">
-      <div class="tracker__container">
+      <div class="tracker__wrapper">
         <header class="header">
           <h2 class="header__logo">SpenTracker</h2>
 
@@ -40,7 +40,7 @@
         <div class="overview">
           <h3 class="overview__heading">Overview</h3>
 
-          <div class="overview__container">
+          <div class="overview__wrapper">
             <div class="overview__item overview__income">
               <h4 class="overview__head">Income</h4>
               <p class="overview__total">$2000</p>
@@ -58,6 +58,34 @@
               <p class="overview__total">$800</p>
             </div>
           </div>
+        </div>
+
+        <div class="search">
+          <label for="" class="search__label">
+            <svg
+              class="search__icon"
+              class="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+              />
+            </svg>
+            <input
+              class="search__input"
+              type="search"
+              name="search"
+              id="search-bar"
+              placeholder="Search"
+            />
+          </label>
+          <button class="search__clear-btn">Clear History</button>
         </div>
       </div>
     </section>

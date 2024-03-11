@@ -1,0 +1,57 @@
+@import "./variables";
+@import "./mixins";
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__label {
+    position: relative;
+    width: 250px;
+
+    @include screens(phone-only) {
+      width: 45%;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    margin-inline-start: 4px;
+    width: 22px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgb(156, 156, 156);
+    cursor: text;
+  }
+
+  &__input {
+    all: unset;
+    width: 100%;
+    padding: 4px 0 4px 28px;
+    border: 1px solid rgb(192, 192, 192);
+    border-radius: 6px;
+    cursor: text;
+
+    @include screens(phone-only) {
+      width: 100%;
+    }
+  }
+
+  &__clear-btn {
+    all: unset;
+    font-weight: var(--fw-5);
+    color: red;
+    cursor: pointer;
+    transition: var(--transition-timing);
+
+    &:hover {
+      font-weight: var(--fw-6);
+      text-decoration: underline;
+    }
+
+    @include screens(phone-only) {
+      font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+  }
+}

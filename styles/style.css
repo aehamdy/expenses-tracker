@@ -1,4 +1,9 @@
 :root {
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
   --transition-timing: 0.3s;
 }
 
@@ -32,18 +37,18 @@ ul {
   place-items: center;
   border-radius: 16px;
 }
-.tracker__container {
+.tracker__wrapper {
   height: 95vh;
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
   padding: 10px 20px;
   background-color: #fff;
   border-radius: 26px;
 }
 @media (max-width: 599px) {
-  .tracker__container {
+  .tracker__wrapper {
     gap: 15px;
   }
 }
@@ -155,7 +160,7 @@ ul {
 .overview__heading {
   font-size: 2.2rem;
 }
-.overview__container {
+.overview__wrapper {
   display: flex;
   justify-content: space-evenly;
   flex-wrap: wrap;
@@ -179,19 +184,87 @@ ul {
     padding: 8px 10px;
   }
 }
+.overview__head {
+  text-transform: uppercase;
+}
+.overview__total {
+  font-weight: 700;
+}
 .overview__income {
-  background-color: #b9e7e7;
+  background-color: #cbecec;
   border-color: #0dccc9;
 }
 .overview__expenses {
-  background-color: #ffcccb;
-  border-color: #fca2a0;
+  background-color: #fcfdaf;
+  border-color: #f4f749;
 }
 .overview__balance {
-  background-color: #fcfdaf;
-  border-color: #f6f860;
+  background-color: #eadcdc;
+  border-color: #b4a9a9;
 }
 .overview__savings {
   background-color: #c6e1b8;
   border-color: #8edb67;
+}
+
+:root {
+  --fw-3: 300;
+  --fw-4: 400;
+  --fw-5: 500;
+  --fw-6: 600;
+  --fw-7: 700;
+  --transition-timing: 0.3s;
+}
+
+.search {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.search__label {
+  position: relative;
+  width: 250px;
+}
+@media (max-width: 599px) {
+  .search__label {
+    width: 45%;
+  }
+}
+.search__icon {
+  position: absolute;
+  margin-inline-start: 4px;
+  width: 22px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgb(156, 156, 156);
+  cursor: text;
+}
+.search__input {
+  all: unset;
+  width: 100%;
+  padding: 4px 0 4px 28px;
+  border: 1px solid rgb(192, 192, 192);
+  border-radius: 6px;
+  cursor: text;
+}
+@media (max-width: 599px) {
+  .search__input {
+    width: 100%;
+  }
+}
+.search__clear-btn {
+  all: unset;
+  font-weight: var(--fw-5);
+  color: red;
+  cursor: pointer;
+  transition: var(--transition-timing);
+}
+.search__clear-btn:hover {
+  font-weight: var(--fw-6);
+  text-decoration: underline;
+}
+@media (max-width: 599px) {
+  .search__clear-btn {
+    font-size: clamp(1.2rem, 2vw, 2rem);
+  }
 }/*# sourceMappingURL=style.css.map */

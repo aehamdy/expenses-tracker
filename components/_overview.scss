@@ -9,7 +9,7 @@
     font-size: 2.2rem;
   }
 
-  &__container {
+  &__wrapper {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
@@ -35,24 +35,26 @@
   }
 
   &__head {
+    text-transform: uppercase;
   }
 
   &__total {
+    font-weight: 700;
   }
 
   &__income {
-    background-color: #b9e7e7;
+    background-color: #cbecec;
     border-color: #0dccc9;
   }
 
   &__expenses {
-    background-color: #ffcccb;
-    border-color: #fca2a0;
+    background-color: #fcfdaf;
+    border-color: #f4f749;
   }
 
   &__balance {
-    background-color: #fcfdaf;
-    border-color: #f6f860;
+    background-color: #eadcdc;
+    border-color: #b4a9a9;
   }
 
   &__savings {
