@@ -1,0 +1,15 @@
+.tracker {
+  height: 100vh;
+  width: 95%;
+  background-color: #ffffffa2;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+
+  &__container {
+    height: 95vh;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 26px;
+  }
+}
