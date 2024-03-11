@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .header {
   display: flex;
   flex-direction: column;
@@ -5,8 +7,14 @@
   padding: 10px 20px;
 
   &__logo {
+    align-self: center;
+    font-size: 3rem;
     color: #111;
     user-select: none;
+
+    @include screens(medium-to-large) {
+      font-size: 3.2rem;
+    }
   }
 
   &__content {
@@ -24,10 +32,18 @@
 
   &__welcoming {
     font-weight: bold;
+
+    @include screens(phone-only) {
+      font-size: clamp(0.7rem, 3.2vw, 1.3rem);
+    }
   }
 
   &__message {
     color: #999999;
+
+    @include screens(phone-only) {
+      font-size: clamp(0.7rem, 3.2vw, 1.3rem);
+    }
   }
 
   &__toggler {
@@ -48,7 +64,12 @@
     height: 20px;
     background-color: black;
     border-radius: 10px;
+    cursor: pointer;
     transition: var(--transition-timing);
+
+    @include screens(phone-only) {
+      width: 40px;
+    }
 
     &::before {
       content: "";
@@ -57,10 +78,16 @@
       height: 15px;
       background-color: #fff;
       border-radius: 50%;
-      left: 2px;
+      left: 4px;
       top: 50%;
       transform: translateY(-50%);
       transition: var(--transition-timing);
+
+      @include screens(phone-only) {
+        width: 14px;
+        height: 14px;
+        left: 3px;
+      }
     }
   }
 
@@ -70,5 +97,11 @@
   &__checkbox:checked + .header__label::before {
     left: 27px;
     background-color: #fff;
+
+    @include screens(phone-only) {
+      left: 23px;
+    }
   }
 }
+
+// adjust the responsiveness of header and adjust colors

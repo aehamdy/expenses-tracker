@@ -1,4 +1,6 @@
-@use "./components/reset";
 @use "./components/variables";
+@use "./components/reset";
 @use "./components/app";
 @use "./components/header";
+
+@use "./components/mixins";

@@ -1,0 +1,19 @@
+@mixin screens($size) {
+  @if $size == phone-only {
+    @media (max-width: 599px) {
+      @content;
+    }
+  } @else if $size == medium-screen {
+    @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == medium-to-large {
+    @media (min-width: 600px) and (max-width: 1200px) {
+      @content;
+    }
+  } @else if $size == large-screen {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  }
+}
