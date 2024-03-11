@@ -1,3 +1,5 @@
+@import "./mixins";
+
 .tracker {
   height: 100vh;
   width: 95%;
@@ -9,7 +11,15 @@
   &__container {
     height: 95vh;
     width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 10px 20px;
     background-color: #fff;
     border-radius: 26px;
+
+    @include screens(phone-only) {
+      gap: 15px;
+    }
   }
 }

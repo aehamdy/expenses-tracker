@@ -35,15 +35,23 @@ ul {
 .tracker__container {
   height: 95vh;
   width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 10px 20px;
   background-color: #fff;
   border-radius: 26px;
+}
+@media (max-width: 599px) {
+  .tracker__container {
+    gap: 15px;
+  }
 }
 
 .header {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 10px 20px;
 }
 .header__logo {
   align-self: center;
@@ -137,4 +145,53 @@ ul {
   .header__checkbox:checked + .header__label::before {
     left: 23px;
   }
+}
+
+.overview {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.overview__heading {
+  font-size: 2.2rem;
+}
+.overview__container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.overview__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  width: 15%;
+  padding: 15px 15px;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 8px;
+}
+@media (max-width: 599px) {
+  .overview__item {
+    gap: 15px;
+    width: 44%;
+    padding: 8px 10px;
+  }
+}
+.overview__income {
+  background-color: #b9e7e7;
+  border-color: #0dccc9;
+}
+.overview__expenses {
+  background-color: #ffcccb;
+  border-color: #fca2a0;
+}
+.overview__balance {
+  background-color: #fcfdaf;
+  border-color: #f6f860;
+}
+.overview__savings {
+  background-color: #c6e1b8;
+  border-color: #8edb67;
 }/*# sourceMappingURL=style.css.map */
