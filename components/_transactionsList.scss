@@ -1,0 +1,152 @@
+@import "./variables";
+@import "./mixins";
+
+.transactions {
+  padding: 8px;
+  border-top: 1px solid grey;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+  }
+
+  &__timing-wrapper {
+    display: flex;
+    gap: 20px;
+  }
+
+  &__list {
+    height: 206px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    overflow-y: scroll;
+
+    &::-webkit-scrollbar {
+      width: 13px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      border: 5px solid transparent;
+      border-radius: 100px;
+      background-color: var(--color-body);
+      background-clip: content-box;
+      cursor: pointer;
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background-color: #eeeeeeab;
+  }
+
+  &__type {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    width: 25%;
+
+    @include screens(phone-only) {
+      flex-direction: column;
+      gap: 5px;
+    }
+  }
+
+  &__category {
+    font-size: clamp(var(--fs-16), 2vw, var(--fs-19));
+    font-weight: var(--fw-7);
+
+    @include screens(phone-only) {
+      font-size: clamp(var(--fs-14), 1.5vw, var(--fs-16));
+    }
+  }
+
+  &__name {
+    font-size: clamp(var(--fs-13), 2vw, var(--fs-17));
+    font-weight: var(--fw-4);
+
+    @include screens(phone-only) {
+      font-size: clamp(var(--fs-13), 1.5vw, var(--fs-15));
+    }
+  }
+
+  &__details {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    width: 35%;
+
+    @include screens(phone-only) {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  &__amount {
+    font-size: var(--fs-17);
+
+    @include screens(phone-only) {
+      font-size: var(--fs-15);
+    }
+  }
+
+  &__time-wrapper {
+    display: flex;
+    gap: 20px;
+    font-size: var(--fs-17);
+
+    @include screens(phone-only) {
+      gap: 5px;
+      font-size: var(--fs-15);
+    }
+  }
+
+  &__date {
+  }
+
+  &__time {
+  }
+
+  &__actions {
+    display: flex;
+    gap: 20px;
+
+    @include screens(phone-only) {
+      gap: 15px;
+    }
+  }
+
+  &__edit {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &__edit-icon {
+    width: 22px;
+
+    @include screens(phone-only) {
+      width: 18px;
+    }
+  }
+
+  &__delete {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &__delete-icon {
+    width: 22px;
+
+    @include screens(phone-only) {
+      width: 18px;
+    }
+  }
+}
