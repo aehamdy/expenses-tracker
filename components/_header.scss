@@ -48,7 +48,7 @@
     height: 20px;
     background-color: black;
     border-radius: 10px;
-    transition: 0.3s;
+    transition: var(--transition-timing);
 
     &::before {
       content: "";
@@ -60,15 +60,15 @@
       left: 2px;
       top: 50%;
       transform: translateY(-50%);
-      transition: 0.3s;
+      transition: var(--transition-timing);
     }
   }
 
   &__checkbox:checked + .header__label {
-    background-color: green;
+    background-color: #999;
   }
   &__checkbox:checked + .header__label::before {
     left: 27px;
-    background-color: red;
+    background-color: #fff;
   }
 }
