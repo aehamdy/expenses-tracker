@@ -1,0 +1,41 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 20px;
+
+  &__logo {
+    color: #111;
+    user-select: none;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__welcoming {
+    font-weight: bold;
+  }
+
+  &__message {
+    color: #999999;
+  }
+
+  &__toggler {
+  }
+
+  &__checkbox {
+  }
+
+  &__label {
+    position: relative;
+  }
+}
