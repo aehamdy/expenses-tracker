@@ -13,6 +13,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
   }
 
   &__text {
@@ -30,12 +31,44 @@
   }
 
   &__toggler {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
   }
 
   &__checkbox {
+    appearance: none;
   }
 
   &__label {
     position: relative;
+    display: block;
+    width: 45px;
+    height: 20px;
+    background-color: black;
+    border-radius: 10px;
+    transition: 0.3s;
+
+    &::before {
+      content: "";
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 50%;
+      left: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
+    }
+  }
+
+  &__checkbox:checked + .header__label {
+    background-color: green;
+  }
+  &__checkbox:checked + .header__label::before {
+    left: 27px;
+    background-color: red;
   }
 }
