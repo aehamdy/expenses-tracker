@@ -17,6 +17,7 @@
     padding: 10px 20px;
     background-color: var(--app-bg);
     border-radius: 26px;
+    transition: var(--transition-timing);
 
     @include screens(phone-only) {
       gap: 15px;

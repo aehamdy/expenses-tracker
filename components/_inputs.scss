@@ -26,7 +26,7 @@
     left: 50%;
     transform: translateX(-50%);
     border-radius: 50%;
-    background-color: #ddd;
+    background-color: var(--transaction-item-bg);
     z-index: 1;
     cursor: pointer;
 
@@ -36,6 +36,7 @@
   }
 
   &__arrow-icon {
+    color: var(--logo-color);
     width: 22px;
   }
 
@@ -47,11 +48,21 @@
     gap: 10px;
     position: relative;
     padding: 16px 18px;
-    background-color: #f2f2f2;
-    // background-color: #6fb7a931;
-    // background-color: var(--color-body);
+    background-color: var(--inputs-bg-color);
     border-radius: 8px;
-    // top: 100%;
+    transition: var(--transition-timing);
+
+    @include screens(medium-to-large) {
+      top: 95px;
+      display: none;
+      opacity: 0;
+    }
+
+    @include screens(phone-only) {
+      top: 25px;
+      display: none;
+      opacity: 0;
+    }
   }
 
   &__category,
@@ -118,11 +129,8 @@
     justify-content: center;
     align-items: center;
     font-size: 2rem;
-    // background-color: #81df82;
-    // background-color: #00cc99;
-    // background-color: #6fb7a9;
-    background-color: var(--color-body);
-    color: #fff;
+    background-color: var(--button-bg-color);
+    color: var(--button-dark-color);
     flex-basis: 40px;
     flex-grow: 1;
     height: 10px;
@@ -130,9 +138,39 @@
     border: 1px solid transparent;
     border-radius: 6px;
     cursor: pointer;
+    transition: var(--transition-timing);
+
+    &:hover {
+      font-size: 2.2rem;
+      scale: 1.15;
+      background-color: var(--button-bg-hover-color);
+    }
 
     @include screens(phone-only) {
       flex-basis: 60px;
     }
   }
+}
+
+html:has(.header__checkbox:checked) {
+  --color-body: #313131;
+  // --app-bg: #171717;
+  --app-bg: #313131;
+  --logo-color: #fff;
+  --heading-color: #fff;
+  --toggle-bg-color: #b6b6b6;
+  --overview-heading-color: #fff;
+  --overview-item-color: #fff;
+  --color-lighter-grey: #f7f7f728;
+  --scrollbar-color: #f7f7f71e;
+  --transaction-item-color: #fff;
+  --transaction-item-bg: #f7f7f70c;
+  --inputs-bg-color: #f7f7f70c;
+  --button-color: #121212;
+  --button-bg-color: #fff;
+  --button-bg-hover-color: #00cc99ce;
+  --income-color: #00cc99e3;
+  --expenses-color: #fe1919d5;
+  --balance-color: #91118ed5;
+  --savings-color: #4c89bfc7;
 }

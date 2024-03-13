@@ -3,17 +3,6 @@
 
 .transactions {
   padding: 8px;
-  // border-top: 1px solid var(--color-lighter-grey);
-
-  // &__header {
-  //   display: flex;
-  //   justify-content: space-between;
-  // }
-
-  // &__timing-wrapper {
-  //   display: flex;
-  //   gap: 20px;
-  // }
 
   &__list {
     height: 206px;
@@ -29,7 +18,7 @@
     &::-webkit-scrollbar-thumb {
       border: 5px solid transparent;
       border-radius: 100px;
-      background-color: var(--color-body);
+      background-color: var(--scrollbar-color);
       background-clip: content-box;
       cursor: pointer;
     }
@@ -41,7 +30,8 @@
     align-items: center;
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: #f7f7f7;
+    color: var(--transaction-item-color);
+    background-color: var(--transaction-item-bg);
   }
 
   &__type {
@@ -118,6 +108,18 @@
 
     @include screens(phone-only) {
       font-size: clamp(1rem, 2.8vw, var(--fs-16));
+    }
+
+    &-income {
+      color: var(--income-color);
+    }
+
+    &-expenses {
+      color: var(--expenses-color);
+    }
+
+    &-savings {
+      color: var(--savings-color);
     }
   }
 

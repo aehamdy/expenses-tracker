@@ -8,7 +8,7 @@
   &__logo {
     align-self: center;
     font-size: 3rem;
-    color: var(--color-black);
+    color: var(--logo-color);
     user-select: none;
 
     @include screens(medium-to-large) {
@@ -30,7 +30,7 @@
   }
 
   &__welcoming {
-    color: var(--color-black);
+    color: var(--heading-color);
     font-weight: bold;
 
     @include screens(phone-only) {
@@ -62,7 +62,7 @@
     display: block;
     width: 45px;
     height: 20px;
-    background-color: var(--color-black);
+    background-color: var(--toggle-bg-color);
     border-radius: 10px;
     cursor: pointer;
     transition: var(--transition-timing);
@@ -76,7 +76,7 @@
       position: absolute;
       width: 15px;
       height: 15px;
-      background-color: var(--color-white);
+      background-color: var(--toggle-color);
       border-radius: 50%;
       left: 4px;
       top: 50%;
@@ -92,11 +92,11 @@
   }
 
   &__checkbox:checked + .header__label {
-    background-color: var(--msg-color);
+    background-color: var(--toggle-bg-color);
   }
   &__checkbox:checked + .header__label::before {
     left: 27px;
-    background-color: var(--color-white);
+    background-color: var(--toggle-color);
 
     @include screens(phone-only) {
       left: 23px;

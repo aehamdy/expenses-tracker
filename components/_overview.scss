@@ -1,4 +1,7 @@
+@import "./variables";
 @import "./mixins";
+
+$income-color: rgb(130, 211, 228);
 
 .overview {
   display: flex;
@@ -6,6 +9,7 @@
   gap: 10px;
 
   &__heading {
+    color: var(--overview-heading-color);
     font-size: 2.2rem;
   }
 
@@ -23,9 +27,9 @@
     gap: 10px;
     width: 15%;
     padding: 10px 4px;
-    border-width: 2px;
-    border-style: solid;
     border-radius: 8px;
+    color: var(--overview-item-color);
+    transition: var(--transition-timing);
 
     @include screens(medium-screen) {
       font-size: clamp(1.3rem, 2vw, 1.6rem);
@@ -47,22 +51,22 @@
   }
 
   &__income {
-    background-color: #cbecec;
-    border-color: #0dccc9;
+    background-color: var(--income-color);
+    border-color: var(--income-border-color);
   }
 
   &__expenses {
-    background-color: #fcfdaf;
-    border-color: #f4f749;
+    background-color: var(--expenses-color);
+    border-color: var(--expenses-border-color);
   }
 
   &__balance {
-    background-color: #eadcdc;
-    border-color: #b4a9a9;
+    background-color: var(--balance-color);
+    border-color: var(--balance-border-color);
   }
 
   &__savings {
-    background-color: #c6e1b8;
-    border-color: #8edb67;
+    background-color: var(--savings-color);
+    border-color: var(--savings-border-color);
   }
 }

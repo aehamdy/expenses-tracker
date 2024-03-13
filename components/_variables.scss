@@ -4,7 +4,7 @@
   --color-light-grey: rgb(206, 206, 206);
   --color-black: #0e0f11;
   --color-red: #fe1a19;
-  // --color-body: #9dc4eb;
+
   --color-body: #8bb8f1; //Jordy blue
   // --color-body: #1dacd6; //battery charge
   // --color-body: #4c89bf; //nature blue
@@ -12,20 +12,30 @@
   // --color-body: rgb(157, 196, 235);
   // --color-body: #e5f1ef;
   // --color-body: #6fb7a9;
+
   --app-bg: #fff;
-  // --logo-color:
+  --logo-color: #0e0f11;
+  --heading-color: #0e0f11;
   --msg-color: #b6b6b6;
-  // --heading-color:
-  // --overview-item-color
-  // --cat-color:
-  // --name-color:
-  // --icon-color:
-  // --input-border-color:
-  // --body-bg-color:
-  // --overview-item-bg-color:
-  // --item-bg-color:
-  // --inputs-bg-color
-  // --button-bg-color
+  --toggle-color: #fff;
+  --toggle-bg-color: #171717;
+  --overview-heading-color: #171717;
+  --overview-item-color: #171717;
+  --scrollbar-color: #8bb8f1;
+  --transaction-item-color: #171717;
+  --transaction-item-bg: #f7f7f7;
+  --inputs-bg-color: #f2f2f2;
+  --button-color: #fff;
+  --button-bg-color: #8bb8f1;
+  --button-bg-hover-color: #5196f0;
+
+  --income-color: #00cc99ce;
+  // --income-border-color: #00b88a;
+  --expenses-color: #fe191999;
+  --balance-color: #aa12a860;
+  // --balance-border-color: #6f0b6e;
+  --savings-color: #4c89bf99;
+  // --savings-border-color: #4c89bf;
 
   --fm-primary: "Quicksand", sans-serif;
   --fm-secondary: "Poppins", sans-serif;

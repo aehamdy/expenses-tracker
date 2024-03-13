@@ -15,6 +15,7 @@ body {
   background-color: var(--color-body);
   display: grid;
   place-items: center;
+  transition: var(--transition-timing);
 }
 
 ul {
