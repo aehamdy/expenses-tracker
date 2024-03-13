@@ -31,7 +31,7 @@
   &__amount,
   &__date,
   &__time {
-    font-family: "Poppins", sans-serif;
+    font-family: var(--fm-secondary);
     padding: 10px 10px;
     flex-basis: 15%;
     flex-grow: 1;

@@ -3,17 +3,17 @@
 
 .transactions {
   padding: 8px;
-  border-top: 1px solid grey;
+  border-top: 1px solid var(--color-lighter-grey);
 
-  &__header {
-    display: flex;
-    justify-content: space-between;
-  }
+  // &__header {
+  //   display: flex;
+  //   justify-content: space-between;
+  // }
 
-  &__timing-wrapper {
-    display: flex;
-    gap: 20px;
-  }
+  // &__timing-wrapper {
+  //   display: flex;
+  //   gap: 20px;
+  // }
 
   &__list {
     height: 206px;
@@ -41,7 +41,7 @@
     align-items: center;
     padding: 10px 20px;
     border-radius: 6px;
-    background-color: #eeeeeeab;
+    background-color: #f7f7f7;
   }
 
   &__type {
@@ -50,6 +50,11 @@
     gap: 15px;
     width: 25%;
 
+    @include screens(medium-to-large) {
+      flex-direction: column;
+      gap: 3px;
+    }
+
     @include screens(phone-only) {
       flex-direction: column;
       gap: 5px;
@@ -57,11 +62,15 @@
   }
 
   &__category {
-    font-size: clamp(var(--fs-16), 2vw, var(--fs-19));
+    font-size: var(--fs-19);
     font-weight: var(--fw-7);
 
+    @include screens(medium-screen) {
+      font-size: clamp(var(--fs-14), 2vw, var(--fs-17));
+    }
+
     @include screens(phone-only) {
-      font-size: clamp(var(--fs-14), 1.5vw, var(--fs-16));
+      font-size: clamp(1rem, 2.8vw, var(--fs-16));
     }
   }
 
@@ -70,7 +79,7 @@
     font-weight: var(--fw-4);
 
     @include screens(phone-only) {
-      font-size: clamp(var(--fs-13), 1.5vw, var(--fs-15));
+      font-size: clamp(1rem, 2.8vw, var(--fs-15));
     }
   }
 
@@ -79,6 +88,10 @@
     justify-content: space-between;
     gap: 30px;
     width: 35%;
+
+    @include screens(medium-screen) {
+      gap: 15px;
+    }
 
     @include screens(phone-only) {
       flex-direction: column;
@@ -89,9 +102,14 @@
 
   &__amount {
     font-size: var(--fs-17);
+    font-weight: var(--fw-7);
+
+    @include screens(medium-screen) {
+      font-size: clamp(var(--fs-13), 2vw, var(--fs-16));
+    }
 
     @include screens(phone-only) {
-      font-size: var(--fs-15);
+      font-size: clamp(1rem, 2.8vw, var(--fs-16));
     }
   }
 
@@ -100,44 +118,63 @@
     gap: 20px;
     font-size: var(--fs-17);
 
+    @include screens(medium-screen) {
+      gap: 15px;
+      font-size: clamp(var(--fs-14), 2vw, var(--fs-17));
+    }
+
     @include screens(phone-only) {
       gap: 5px;
-      font-size: var(--fs-15);
+      font-size: clamp(var(--fs-13), 2.8vw, var(--fs-16));
     }
   }
 
   &__actions {
     display: flex;
+    align-items: center;
     gap: 20px;
 
-    @include screens(phone-only) {
-      gap: 15px;
+    @include screens(medium-screen) {
+      gap: 10px;
     }
-  }
 
-  &__edit {
-    all: unset;
-    cursor: pointer;
+    @include screens(phone-only) {
+      gap: 10px;
+    }
+
+    @media (max-width: 290px) {
+      gap: 5px;
+    }
+
+    button {
+      all: unset;
+      width: 22px;
+      transition: var(--transition-timing);
+      cursor: pointer;
+
+      @include screens(medium-screen) {
+        width: 20px;
+      }
+
+      @include screens(phone-only) {
+        width: 17px;
+      }
+    }
   }
 
   &__edit-icon {
-    width: 22px;
+    transition: var(--transition-timing);
 
-    @include screens(phone-only) {
-      width: 18px;
+    &:hover {
+      color: blue;
     }
   }
 
-  &__delete {
-    all: unset;
-    cursor: pointer;
-  }
-
   &__delete-icon {
-    width: 22px;
+    transition: var(--transition-timing);
 
-    @include screens(phone-only) {
-      width: 18px;
+    &:hover {
+      color: var(--color-red);
     }
   }
 }

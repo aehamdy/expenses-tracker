@@ -1,5 +1,14 @@
 :root {
-  --color-body: rgb(157, 196, 235);
+  --color-white: #fff;
+  --color-lighter-grey: rgb(228, 228, 228);
+  --color-light-grey: rgb(206, 206, 206);
+  --color-black: #0e0f11;
+  --color-red: #fe1a19;
+  --color-body: #8bb8f1;
+  --app-bg: #fff;
+  --msg-color: #b6b6b6;
+  --fm-primary: "Quicksand", sans-serif;
+  --fm-secondary: "Poppins", sans-serif;
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -30,7 +39,7 @@ html {
 }
 
 body {
-  font-family: "Quicksand", sans-serif;
+  font-family: var(--fm-primary);
   font-size: 1.6rem;
   background-color: #e5f1ef;
   background-color: var(--color-body);
@@ -55,9 +64,9 @@ ul {
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 22px;
   padding: 10px 20px;
-  background-color: #fff;
+  background-color: var(--app-bg);
   border-radius: 26px;
 }
 @media (max-width: 599px) {
@@ -74,7 +83,7 @@ ul {
 .header__logo {
   align-self: center;
   font-size: 3rem;
-  color: #111;
+  color: var(--color-black);
   user-select: none;
 }
 @media (min-width: 600px) and (max-width: 1200px) {
@@ -94,6 +103,7 @@ ul {
   gap: 3px;
 }
 .header__welcoming {
+  color: var(--color-black);
   font-weight: bold;
 }
 @media (max-width: 599px) {
@@ -102,7 +112,7 @@ ul {
   }
 }
 .header__message {
-  color: #999999;
+  color: var(--msg-color);
 }
 @media (max-width: 599px) {
   .header__message {
@@ -123,7 +133,7 @@ ul {
   display: block;
   width: 45px;
   height: 20px;
-  background-color: black;
+  background-color: var(--color-black);
   border-radius: 10px;
   cursor: pointer;
   transition: var(--transition-timing);
@@ -138,7 +148,7 @@ ul {
   position: absolute;
   width: 15px;
   height: 15px;
-  background-color: #fff;
+  background-color: var(--color-white);
   border-radius: 50%;
   left: 4px;
   top: 50%;
@@ -153,11 +163,11 @@ ul {
   }
 }
 .header__checkbox:checked + .header__label {
-  background-color: #999;
+  background-color: var(--msg-color);
 }
 .header__checkbox:checked + .header__label::before {
   left: 27px;
-  background-color: #fff;
+  background-color: var(--color-white);
 }
 @media (max-width: 599px) {
   .header__checkbox:checked + .header__label::before {
@@ -183,12 +193,17 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 10px;
   width: 15%;
-  padding: 15px 15px;
+  padding: 10px 4px;
   border-width: 2px;
   border-style: solid;
   border-radius: 8px;
+}
+@media (min-width: 600px) {
+  .overview__item {
+    font-size: clamp(1.3rem, 2vw, 1.6rem);
+  }
 }
 @media (max-width: 599px) {
   .overview__item {
@@ -221,7 +236,16 @@ ul {
 }
 
 :root {
-  --color-body: rgb(157, 196, 235);
+  --color-white: #fff;
+  --color-lighter-grey: rgb(228, 228, 228);
+  --color-light-grey: rgb(206, 206, 206);
+  --color-black: #0e0f11;
+  --color-red: #fe1a19;
+  --color-body: #8bb8f1;
+  --app-bg: #fff;
+  --msg-color: #b6b6b6;
+  --fm-primary: "Quicksand", sans-serif;
+  --fm-secondary: "Poppins", sans-serif;
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -261,16 +285,21 @@ ul {
   width: 22px;
   top: 50%;
   transform: translateY(-50%);
-  color: rgb(156, 156, 156);
+  color: var(--color-light-grey);
   cursor: text;
 }
 .search__input {
   all: unset;
+  font-family: var(--fm-secondary);
+  font-weight: var(--fw-3);
   width: 100%;
-  padding: 4px 0 4px 28px;
-  border: 1px solid rgb(192, 192, 192);
+  padding: 6px 0 6px 28px;
+  border: 1px solid var(--color-lighter-grey);
   border-radius: 6px;
   cursor: text;
+}
+.search__input::placeholder {
+  color: var(--color-light-grey);
 }
 @media (max-width: 599px) {
   .search__input {
@@ -280,7 +309,7 @@ ul {
 .search__clear-btn {
   all: unset;
   font-weight: var(--fw-5);
-  color: red;
+  color: var(--color-red);
   cursor: pointer;
   transition: var(--transition-timing);
 }
@@ -295,7 +324,16 @@ ul {
 }
 
 :root {
-  --color-body: rgb(157, 196, 235);
+  --color-white: #fff;
+  --color-lighter-grey: rgb(228, 228, 228);
+  --color-light-grey: rgb(206, 206, 206);
+  --color-black: #0e0f11;
+  --color-red: #fe1a19;
+  --color-body: #8bb8f1;
+  --app-bg: #fff;
+  --msg-color: #b6b6b6;
+  --fm-primary: "Quicksand", sans-serif;
+  --fm-secondary: "Poppins", sans-serif;
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -317,15 +355,7 @@ ul {
 
 .transactions {
   padding: 8px;
-  border-top: 1px solid grey;
-}
-.transactions__header {
-  display: flex;
-  justify-content: space-between;
-}
-.transactions__timing-wrapper {
-  display: flex;
-  gap: 20px;
+  border-top: 1px solid var(--color-lighter-grey);
 }
 .transactions__list {
   height: 206px;
@@ -350,13 +380,19 @@ ul {
   align-items: center;
   padding: 10px 20px;
   border-radius: 6px;
-  background-color: rgba(238, 238, 238, 0.6705882353);
+  background-color: #f7f7f7;
 }
 .transactions__type {
   display: flex;
   align-items: center;
   gap: 15px;
   width: 25%;
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .transactions__type {
+    flex-direction: column;
+    gap: 3px;
+  }
 }
 @media (max-width: 599px) {
   .transactions__type {
@@ -365,12 +401,17 @@ ul {
   }
 }
 .transactions__category {
-  font-size: clamp(var(--fs-16), 2vw, var(--fs-19));
+  font-size: var(--fs-19);
   font-weight: var(--fw-7);
+}
+@media (min-width: 600px) {
+  .transactions__category {
+    font-size: clamp(var(--fs-14), 2vw, var(--fs-17));
+  }
 }
 @media (max-width: 599px) {
   .transactions__category {
-    font-size: clamp(var(--fs-14), 1.5vw, var(--fs-16));
+    font-size: clamp(1rem, 2.8vw, var(--fs-16));
   }
 }
 .transactions__name {
@@ -379,7 +420,7 @@ ul {
 }
 @media (max-width: 599px) {
   .transactions__name {
-    font-size: clamp(var(--fs-13), 1.5vw, var(--fs-15));
+    font-size: clamp(1rem, 2.8vw, var(--fs-15));
   }
 }
 .transactions__details {
@@ -387,6 +428,11 @@ ul {
   justify-content: space-between;
   gap: 30px;
   width: 35%;
+}
+@media (min-width: 600px) {
+  .transactions__details {
+    gap: 15px;
+  }
 }
 @media (max-width: 599px) {
   .transactions__details {
@@ -397,10 +443,16 @@ ul {
 }
 .transactions__amount {
   font-size: var(--fs-17);
+  font-weight: var(--fw-7);
+}
+@media (min-width: 600px) {
+  .transactions__amount {
+    font-size: clamp(var(--fs-13), 2vw, var(--fs-16));
+  }
 }
 @media (max-width: 599px) {
   .transactions__amount {
-    font-size: var(--fs-15);
+    font-size: clamp(1rem, 2.8vw, var(--fs-16));
   }
 }
 .transactions__time-wrapper {
@@ -408,44 +460,65 @@ ul {
   gap: 20px;
   font-size: var(--fs-17);
 }
+@media (min-width: 600px) {
+  .transactions__time-wrapper {
+    gap: 15px;
+    font-size: clamp(var(--fs-14), 2vw, var(--fs-17));
+  }
+}
 @media (max-width: 599px) {
   .transactions__time-wrapper {
     gap: 5px;
-    font-size: var(--fs-15);
+    font-size: clamp(var(--fs-13), 2.8vw, var(--fs-16));
   }
 }
 .transactions__actions {
   display: flex;
+  align-items: center;
   gap: 20px;
+}
+@media (min-width: 600px) {
+  .transactions__actions {
+    gap: 10px;
+  }
 }
 @media (max-width: 599px) {
   .transactions__actions {
-    gap: 15px;
+    gap: 10px;
   }
 }
-.transactions__edit {
+@media (max-width: 290px) {
+  .transactions__actions {
+    gap: 5px;
+  }
+}
+.transactions__actions button {
   all: unset;
+  width: 22px;
+  transition: var(--transition-timing);
   cursor: pointer;
+}
+@media (min-width: 600px) {
+  .transactions__actions button {
+    width: 20px;
+  }
+}
+@media (max-width: 599px) {
+  .transactions__actions button {
+    width: 17px;
+  }
 }
 .transactions__edit-icon {
-  width: 22px;
+  transition: var(--transition-timing);
 }
-@media (max-width: 599px) {
-  .transactions__edit-icon {
-    width: 18px;
-  }
-}
-.transactions__delete {
-  all: unset;
-  cursor: pointer;
+.transactions__edit-icon:hover {
+  color: blue;
 }
 .transactions__delete-icon {
-  width: 22px;
+  transition: var(--transition-timing);
 }
-@media (max-width: 599px) {
-  .transactions__delete-icon {
-    width: 18px;
-  }
+.transactions__delete-icon:hover {
+  color: var(--color-red);
 }
 
 .inputs {
@@ -473,7 +546,7 @@ ul {
   width: 22px;
 }
 .inputs__category, .inputs__name, .inputs__amount, .inputs__date, .inputs__time {
-  font-family: "Poppins", sans-serif;
+  font-family: var(--fm-secondary);
   padding: 10px 10px;
   flex-basis: 15%;
   flex-grow: 1;

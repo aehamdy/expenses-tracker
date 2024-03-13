@@ -13,9 +13,9 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 22px;
     padding: 10px 20px;
-    background-color: #fff;
+    background-color: var(--app-bg);
     border-radius: 26px;
 
     @include screens(phone-only) {

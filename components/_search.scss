@@ -21,17 +21,23 @@
     width: 22px;
     top: 50%;
     transform: translateY(-50%);
-    color: rgb(156, 156, 156);
+    color: var(--color-light-grey);
     cursor: text;
   }
 
   &__input {
     all: unset;
+    font-family: var(--fm-secondary);
+    font-weight: var(--fw-3);
     width: 100%;
-    padding: 4px 0 4px 28px;
-    border: 1px solid rgb(192, 192, 192);
+    padding: 6px 0 6px 28px;
+    border: 1px solid var(--color-lighter-grey);
     border-radius: 6px;
     cursor: text;
+
+    &::placeholder {
+      color: var(--color-light-grey);
+    }
 
     @include screens(phone-only) {
       width: 100%;
@@ -41,7 +47,7 @@
   &__clear-btn {
     all: unset;
     font-weight: var(--fw-5);
-    color: red;
+    color: var(--color-red);
     cursor: pointer;
     transition: var(--transition-timing);
 
