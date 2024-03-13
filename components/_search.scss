@@ -4,7 +4,10 @@
 .search {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: end;
+  border-bottom: 1px solid var(--color-lighter-grey);
+  margin-bottom: 10px;
+  padding-bottom: 10px;
 
   &__label {
     position: relative;

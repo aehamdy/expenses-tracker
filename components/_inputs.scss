@@ -1,15 +1,22 @@
+@import "./mixins";
+
+#inputs__arrow-checkbox {
+  appearance: none;
+}
+
 .inputs {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 10px;
   position: relative;
-  padding: 16px 18px;
-  background-color: #f2f2f2;
-  // background-color: #6fb7a931;
-  // background-color: var(--color-body);
-  border-radius: 8px;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
+  // flex-wrap: wrap;
+  // gap: 10px;
+  // position: relative;
+  // padding: 16px 18px;
+  // background-color: #f2f2f2;
+  // // background-color: #6fb7a931;
+  // // background-color: var(--color-body);
+  // border-radius: 8px;
 
   &__arrow {
     position: absolute;
@@ -20,10 +27,31 @@
     transform: translateX(-50%);
     border-radius: 50%;
     background-color: #ddd;
+    z-index: 1;
+    cursor: pointer;
+
+    @include screens(large-screen) {
+      display: none;
+    }
   }
 
   &__arrow-icon {
     width: 22px;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    position: relative;
+    padding: 16px 18px;
+    background-color: #f2f2f2;
+    // background-color: #6fb7a931;
+    // background-color: var(--color-body);
+    border-radius: 8px;
+    // top: 100%;
   }
 
   &__category,
@@ -38,6 +66,10 @@
     outline: none;
     border: none;
     border-radius: 12px;
+
+    @include screens(phone-only) {
+      flex-basis: 20%;
+    }
   }
 
   &__category {
@@ -51,13 +83,7 @@
     justify-content: space-between;
   }
 
-  &__name {
-    // width: 40%;
-  }
-
   &__amount {
-    // width: 40%;
-
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       appearance: none;
@@ -71,8 +97,6 @@
   }
 
   &__date {
-    // width: 40%;
-
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       appearance: none;
@@ -81,8 +105,6 @@
   }
 
   &__time {
-    // max-width: 40%;
-
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {
       appearance: none;
@@ -91,7 +113,6 @@
   }
 
   &__add-btn {
-    // width: 15%;
     all: unset;
     display: flex;
     justify-content: center;
@@ -102,12 +123,16 @@
     // background-color: #6fb7a9;
     background-color: var(--color-body);
     color: #fff;
-    flex-basis: 5px;
+    flex-basis: 40px;
     flex-grow: 1;
     height: 10px;
     padding: 10px;
     border: 1px solid transparent;
     border-radius: 6px;
     cursor: pointer;
+
+    @include screens(phone-only) {
+      flex-basis: 60px;
+    }
   }
 }

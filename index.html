@@ -60,7 +60,7 @@
           </div>
         </div>
 
-        <div class="search">
+        <!-- <div class="search">
           <label for="" class="search__label">
             <svg
               class="search__icon"
@@ -86,9 +86,36 @@
             />
           </label>
           <button class="search__clear-btn">Clear History</button>
-        </div>
+        </div> -->
 
         <div class="transactions">
+          <div class="search">
+            <label for="" class="search__label">
+              <svg
+                class="search__icon"
+                class="w-6 h-6 text-gray-800 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-width="2"
+                  d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                />
+              </svg>
+              <input
+                class="search__input"
+                type="search"
+                name="search"
+                id="search-bar"
+                placeholder="Search"
+              />
+            </label>
+            <button class="search__clear-btn">Clear History</button>
+          </div>
           <!-- <div class="transactions__header">
             <div class="transactions__title">Transaction Name</div>
             <div class="transactions__title">Amount</div>
@@ -447,7 +474,12 @@
         </div>
 
         <div class="inputs">
-          <div class="inputs__arrow">
+          <input
+            type="checkbox"
+            name="arrow-checkbox"
+            id="inputs__arrow-checkbox"
+          />
+          <label class="inputs__arrow" for="inputs__arrow-checkbox">
             <svg
               class="inputs__arrow-icon"
               class="w-6 h-6 text-gray-800 dark:text-white"
@@ -464,59 +496,61 @@
                 d="m16 17-4-4-4 4m8-6-4-4-4 4"
               />
             </svg>
+          </label>
+          <div class="inputs__wrapper">
+            <select class="inputs__category" name="category" id="category">
+              <option value="" disabled selected>Select Category</option>
+              <option value="Income">Income</option>
+              <option value="Savings">Savings</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Transportation">Transportation</option>
+              <option value="Grocery">Grocery</option>
+              <option value="Electricity">Electricity</option>
+              <option value="Gas">Gas</option>
+              <option value="Subscriptions">Subscriptions</option>
+              <option value="Education">Education</option>
+              <option value="Charity">Charity</option>
+              <option value="Rental">Rental</option>
+              <option value="Life Expenses">Life Expenses</option>
+              <option value="Other">Other</option>
+            </select>
+
+            <!-- <div class="inputs__info"> -->
+            <input
+              class="inputs__name"
+              type="text"
+              name="inputsName"
+              id="inputs__name"
+              placeholder="Transaction Name"
+            />
+            <input
+              class="inputs__amount"
+              type="number"
+              name=""
+              id=""
+              placeholder="Amount"
+            />
+            <!-- </div> -->
+
+            <!-- <div class="inputs__timing"> -->
+            <input
+              class="inputs__date"
+              type="number"
+              name=""
+              id=""
+              placeholder="Date"
+            />
+            <input
+              class="inputs__time"
+              type="number"
+              name=""
+              id=""
+              placeholder="Time"
+            />
+            <!-- </div> -->
+
+            <button class="inputs__add-btn">+</button>
           </div>
-          <select class="inputs__category" name="category" id="category">
-            <option value="" disabled selected>Select Category</option>
-            <option value="Income">Income</option>
-            <option value="Savings">Savings</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Transportation">Transportation</option>
-            <option value="Grocery">Grocery</option>
-            <option value="Electricity">Electricity</option>
-            <option value="Gas">Gas</option>
-            <option value="Subscriptions">Subscriptions</option>
-            <option value="Education">Education</option>
-            <option value="Charity">Charity</option>
-            <option value="Rental">Rental</option>
-            <option value="Life Expenses">Life Expenses</option>
-            <option value="Other">Other</option>
-          </select>
-
-          <!-- <div class="inputs__info"> -->
-          <input
-            class="inputs__name"
-            type="text"
-            name="inputsName"
-            id="inputs__name"
-            placeholder="Transaction Name"
-          />
-          <input
-            class="inputs__amount"
-            type="number"
-            name=""
-            id=""
-            placeholder="Amount"
-          />
-          <!-- </div> -->
-
-          <!-- <div class="inputs__timing"> -->
-          <input
-            class="inputs__date"
-            type="number"
-            name=""
-            id=""
-            placeholder="Date"
-          />
-          <input
-            class="inputs__time"
-            type="number"
-            name=""
-            id=""
-            placeholder="Time"
-          />
-          <!-- </div> -->
-
-          <button class="inputs__add-btn">+</button>
         </div>
       </div>
     </section>
