@@ -763,7 +763,7 @@ ul {
   }
 }
 
-html:has(.header__checkbox:checked) {
+body.app--isDark {
   --color-body: #313131;
   --app-bg: #313131;
   --logo-color: #fff;
