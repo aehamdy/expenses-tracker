@@ -12,6 +12,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 1.6rem;
   background-color: #e5f1ef;
+  background-color: var(--color-body);
   display: grid;
   place-items: center;
 }

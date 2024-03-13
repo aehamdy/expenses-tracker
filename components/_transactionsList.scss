@@ -10,9 +10,6 @@
     justify-content: space-between;
   }
 
-  &__title {
-  }
-
   &__timing-wrapper {
     display: flex;
     gap: 20px;
@@ -107,12 +104,6 @@
       gap: 5px;
       font-size: var(--fs-15);
     }
-  }
-
-  &__date {
-  }
-
-  &__time {
   }
 
   &__actions {

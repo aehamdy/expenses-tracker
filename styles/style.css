@@ -1,5 +1,5 @@
 :root {
-  --color-body: #9dc4eb;
+  --color-body: rgb(157, 196, 235);
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -33,6 +33,7 @@ body {
   font-family: "Quicksand", sans-serif;
   font-size: 1.6rem;
   background-color: #e5f1ef;
+  background-color: var(--color-body);
   display: grid;
   place-items: center;
 }
@@ -54,7 +55,7 @@ ul {
   width: 90%;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   padding: 10px 20px;
   background-color: #fff;
   border-radius: 26px;
@@ -220,7 +221,7 @@ ul {
 }
 
 :root {
-  --color-body: #9dc4eb;
+  --color-body: rgb(157, 196, 235);
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -294,7 +295,7 @@ ul {
 }
 
 :root {
-  --color-body: #9dc4eb;
+  --color-body: rgb(157, 196, 235);
   --fs-1: 1rem;
   --fs-11: 1.1rem;
   --fs-12: 1.2rem;
@@ -445,4 +446,77 @@ ul {
   .transactions__delete-icon {
     width: 18px;
   }
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  position: relative;
+  padding: 16px 18px;
+  background-color: #f2f2f2;
+  border-radius: 8px;
+}
+.inputs__arrow {
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  top: -11px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background-color: #ddd;
+}
+.inputs__arrow-icon {
+  width: 22px;
+}
+.inputs__category, .inputs__name, .inputs__amount, .inputs__date, .inputs__time {
+  font-family: "Poppins", sans-serif;
+  padding: 10px 10px;
+  flex-basis: 15%;
+  flex-grow: 1;
+  outline: none;
+  border: none;
+  border-radius: 12px;
+}
+.inputs__category:focus option:first-of-type {
+  display: none;
+}
+.inputs__info {
+  display: flex;
+  justify-content: space-between;
+}
+.inputs__amount::-webkit-inner-spin-button, .inputs__amount::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.inputs__timing {
+  display: flex;
+  justify-content: space-between;
+}
+.inputs__date::-webkit-inner-spin-button, .inputs__date::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.inputs__time::-webkit-inner-spin-button, .inputs__time::-webkit-outer-spin-button {
+  appearance: none;
+  margin: 0;
+}
+.inputs__add-btn {
+  all: unset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  background-color: var(--color-body);
+  color: #fff;
+  flex-basis: 5px;
+  flex-grow: 1;
+  height: 10px;
+  padding: 10px;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
