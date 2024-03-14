@@ -49,10 +49,11 @@ const addTransaction = () => {
         catType: categoryType,
     }
 
-    const transactionsArray = [];
+    const transactionsArray = getFromStorage("exp-trans") || [];
 
     transactionsArray.unshift(transaction);
-
+    
+    saveToStorage("exp-trans", transactionsArray);
 
     let li = "";
 
