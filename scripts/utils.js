@@ -110,3 +110,11 @@ export const renderTransactions = (transactionsArray) => {
     return li;
 };
 
+export const initOnStart = () => {
+    
+    const data = getFromStorage("exp-trans");
+
+    const list = renderTransactions(data);
+
+    transactionsList.innerHTML = list;
+}
