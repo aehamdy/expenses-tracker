@@ -22,7 +22,69 @@ const saveToStorage = function (key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
+const renderTransactions = (transactionsArray) => {
+  let li = "";
+
+  transactionsArray.forEach(item => {
+
+   li += `<li class="transactions__item">
+      <div class="transactions__type">
+        <div class="transactions__category">${item.category}</div>
+        <p class="transactions__name">${item.name}</p>
+      </div>
+      <div class="transactions__details">
+        <div class="transactions__amount ${item.catType}">
+          ${item.amount}
+        </div>
+        <div class="transactions__time-wrapper">
+          <div class="transactions__date">${item.date}</div>
+          <div class="transactions__time">${item.time}</div>
+        </div>
+      </div>
+      <div class="transactions__actions">
+        <button class="transactions__edit">
+          <svg
+            class="transactions__edit-icon w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"
+            />
+          </svg>
+        </button>
+        <button class="transactions__delete">
+          <svg
+            class="transactions__delete-icon w-6 h-6 text-gray-800 dark:text-white"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
+            />
+          </svg>
+        </button>
+      </div>
+    </li>`;
+  })
+
+  return li
+};
+
 const addTransaction = () => {
+
     const catValue = categoryField.value;
     const nameValue = nameField.value.trim().slice(0, 1).toUpperCase() + nameField.value.trim().slice(1).toLowerCase();
     const dateValue = dateField.value.trim();
@@ -55,63 +117,13 @@ const addTransaction = () => {
     
     saveToStorage("exp-trans", transactionsArray);
 
-    let li = "";
+    const li = renderTransactions(transactionsArray);
 
-    transactionsArray.forEach(item => {
-     li += `<li class="transactions__item">
-<div class="transactions__type">
-  <div class="transactions__category">${item.category}</div>
-  <p class="transactions__name">${item.name}</p>
-</div>
-<div class="transactions__details">
-  <div class="transactions__amount ${item.catType}">
-    ${item.amount}
-  </div>
-  <div class="transactions__time-wrapper">
-    <div class="transactions__date">${item.date}</div>
-    <div class="transactions__time">${item.time}</div>
-  </div>
-</div>
-<div class="transactions__actions">
-  <button class="transactions__edit">
-    <svg
-      class="transactions__edit-icon w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="m14.3 4.8 2.9 2.9M7 7H4a1 1 0 0 0-1 1v10c0 .6.4 1 1 1h11c.6 0 1-.4 1-1v-4.5m2.4-10a2 2 0 0 1 0 3l-6.8 6.8L8 14l.7-3.6 6.9-6.8a2 2 0 0 1 2.8 0Z"
-      />
-    </svg>
-  </button>
-  <button class="transactions__delete">
-    <svg
-      class="transactions__delete-icon w-6 h-6 text-gray-800 dark:text-white"
-      aria-hidden="true"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-    >
-      <path
-        stroke="currentColor"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M5 7h14m-9 3v8m4-8v8M10 3h4a1 1 0 0 1 1 1v3H9V4a1 1 0 0 1 1-1ZM6 7h12v13a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1V7Z"
-      />
-    </svg>
-  </button>
-</div>
-</li>`;
-    })
+    console.log(renderTransactions(transactionsArray));
 
-transactionsList.innerHTML = li;
+    console.log(li);
+
+    transactionsList.innerHTML = li;
 }
 
 addBtn.addEventListener("click", addTransaction);
