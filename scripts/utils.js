@@ -48,9 +48,8 @@ export const addTransaction = () => {
     
     saveToStorage("exp-trans", transactionsArray);
 
-    const li = renderTransactions(transactionsArray);
+    renderTransactions(transactionsArray);
 
-    displayTransactions(li);
 };
 
 export const renderTransactions = (transactionsArray) => {
