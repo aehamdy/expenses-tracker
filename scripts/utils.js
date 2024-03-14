@@ -3,10 +3,14 @@ import { amountField, categoryField, dateField, nameField, timeField, transactio
 const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : false;
-}
+};
 
 const saveToStorage = function (key, value) {
     localStorage.setItem(key, JSON.stringify(value));
+};
+
+const displayTransactions = (list) => {
+    transactionsList.innerHTML = list;
 }
 
 export const addTransaction = () => {
@@ -46,7 +50,7 @@ export const addTransaction = () => {
 
     const li = renderTransactions(transactionsArray);
 
-    transactionsList.innerHTML = li;
+    displayTransactions(li);
 };
 
 export const renderTransactions = (transactionsArray) => {
@@ -106,15 +110,13 @@ export const renderTransactions = (transactionsArray) => {
         </div>
       </li>`;
     })
-  
-    return li;
+
+    displayTransactions(li);
 };
 
 export const initOnStart = () => {
     
     const data = getFromStorage("exp-trans");
 
-    const list = renderTransactions(data);
-
-    transactionsList.innerHTML = list;
+    renderTransactions(data);
 }
