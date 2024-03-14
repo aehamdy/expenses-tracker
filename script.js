@@ -13,11 +13,20 @@ headerToggle.addEventListener("click", () => {
     body.classList.toggle("app--isDark");
 });
 
+const getFromStorage = function (key) {
+    const data = localStorage.getItem(key);
+    return data ? JSON.parse(data) : false;
+}
+
+const saveToStorage = function (key, value) {
+    localStorage.setItem(key, JSON.stringify(value));
+}
+
 const addTransaction = () => {
     const catValue = categoryField.value;
     const nameValue = nameField.value.trim().slice(0, 1).toUpperCase() + nameField.value.trim().slice(1).toLowerCase();
     const dateValue = dateField.value.trim();
-    const timeValue = timeField.value.trim();
+    const timeValue = timeField.value.trim()
 
     let categoryType, amountValue;
      if (catValue === "Income") {
@@ -31,18 +40,35 @@ const addTransaction = () => {
         amountValue = `-$${amountField.value.trim()}`
     };
 
-const transactionItem = `<li class="transactions__item">
+    const transaction = {
+        category: catValue,
+        name: nameValue,
+        amount: amountValue,
+        date: dateValue,
+        time: timeValue,
+        catType: categoryType,
+    }
+
+    const transactionsArray = [];
+
+    transactionsArray.unshift(transaction);
+
+
+    let li = "";
+
+    transactionsArray.forEach(item => {
+     li += `<li class="transactions__item">
 <div class="transactions__type">
-  <div class="transactions__category">${catValue}</div>
-  <p class="transactions__name">${nameValue}</p>
+  <div class="transactions__category">${item.category}</div>
+  <p class="transactions__name">${item.name}</p>
 </div>
 <div class="transactions__details">
-  <div class="transactions__amount ${categoryType}">
-    ${amountValue}
+  <div class="transactions__amount ${item.catType}">
+    ${item.amount}
   </div>
   <div class="transactions__time-wrapper">
-    <div class="transactions__date">${dateValue}</div>
-    <div class="transactions__time">${timeValue}</div>
+    <div class="transactions__date">${item.date}</div>
+    <div class="transactions__time">${item.time}</div>
   </div>
 </div>
 <div class="transactions__actions">
@@ -82,8 +108,9 @@ const transactionItem = `<li class="transactions__item">
   </button>
 </div>
 </li>`;
+    })
 
-transactionsList.innerHTML = transaction;
+transactionsList.innerHTML = li;
 }
 
 addBtn.addEventListener("click", addTransaction);
