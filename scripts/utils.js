@@ -1,4 +1,4 @@
-import { amountField, categoryField, dateField, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
+import { amountField, categoryField, dateField, getDeleteBtns, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
 
 const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
@@ -11,7 +11,7 @@ export const saveToStorage = function (key, value) {
 
 const displayTransactions = (list) => {
     transactionsList.innerHTML = list;
-}
+};
 
 export const addTransaction = () => {
 
@@ -116,11 +116,28 @@ export const renderTransactions = (transactionsArray) => {
 
 export const checkTheme = () => {
     getFromStorage("exp-isDark") && headerToggle.click();
-}
+};
 
 export const initOnStart = () => {
 
     const data = getFromStorage("exp-trans");
 
     renderTransactions(data);
-}
+};
+
+export const attachDeleteBtnListeners = () => {
+    getDeleteBtns().forEach((btn, index) => {
+        btn.addEventListener("click", (e) => {
+            deleteTransaction(e, index);
+        });
+    });
+};
+
+const deleteTransaction = (e, index) => {
+
+    const data = getFromStorage("exp-trans");
+    data.splice(index, 1);
+    saveToStorage("exp-trans", data);
+    renderTransactions(data);
+    attachDeleteBtnListeners();
+};

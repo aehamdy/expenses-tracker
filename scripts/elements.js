@@ -8,3 +8,5 @@ export const dateField = document.querySelector(".inputs__date");
 export const timeField = document.querySelector(".inputs__time");
 export const transactionsList = document.querySelector(".transactions__list");
 export const addBtn = document.querySelector(".inputs__add-btn");
+
+export const getDeleteBtns = () => document.querySelectorAll(".transactions__delete");
