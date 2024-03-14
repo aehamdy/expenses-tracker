@@ -1,14 +1,16 @@
 import { addBtn, body, headerToggle } from "./scripts/elements.js";
-import { addTransaction, initOnStart } from "./scripts/utils.js";
+import { addTransaction, checkTheme, initOnStart, saveToStorage } from "./scripts/utils.js";
+
 
 
 window.addEventListener("DOMContentLoaded", () => {
+  checkTheme();
   initOnStart();
-
-})
+});
 
 headerToggle.addEventListener("click", () => {
-    body.classList.toggle("app--isDark");
+  body.classList.toggle("app--isDark");
+  saveToStorage("exp-isDark", body.classList.contains("app--isDark"));
 });
 
 addBtn.addEventListener("click", addTransaction);

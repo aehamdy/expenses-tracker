@@ -1,11 +1,11 @@
-import { amountField, categoryField, dateField, nameField, timeField, transactionsList } from "./elements.js";
+import { amountField, categoryField, dateField, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
 
 const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : false;
 };
 
-const saveToStorage = function (key, value) {
+export const saveToStorage = function (key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 };
 
@@ -114,8 +114,12 @@ export const renderTransactions = (transactionsArray) => {
     displayTransactions(li);
 };
 
+export const checkTheme = () => {
+    getFromStorage("exp-isDark") && headerToggle.click();
+}
+
 export const initOnStart = () => {
-    
+
     const data = getFromStorage("exp-trans");
 
     renderTransactions(data);
