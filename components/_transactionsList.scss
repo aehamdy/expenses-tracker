@@ -176,19 +176,28 @@
     }
   }
 
-  &__edit-icon {
-    transition: var(--transition-timing);
-
-    &:hover {
-      color: blue;
-    }
-  }
-
   &__delete-icon {
     transition: var(--transition-timing);
 
     &:hover {
       color: var(--color-red);
+    }
+  }
+
+  &__note {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+    font-size: 1.5rem;
+    color: var(--note-color);
+    transition: var(--transition-timing);
+
+    @include screens(medium-screen) {
+      font-size: clamp(1.3rem, 2vw, 1.5rem);
+    }
+
+    @include screens(phone-only) {
+      font-size: clamp(0.8rem, 2vw, 1.2rem);
     }
   }
 }

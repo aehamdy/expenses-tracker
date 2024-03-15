@@ -17,6 +17,7 @@
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
+  --note-color: #0e0f11;
   --inputs-bg-color: #f2f2f2;
   --button-color: #fff;
   --button-bg-color: #8bb8f1;
@@ -214,6 +215,7 @@ ul {
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
+  --note-color: #0e0f11;
   --inputs-bg-color: #f2f2f2;
   --button-color: #fff;
   --button-bg-color: #8bb8f1;
@@ -323,6 +325,7 @@ ul {
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
+  --note-color: #0e0f11;
   --inputs-bg-color: #f2f2f2;
   --button-color: #fff;
   --button-bg-color: #8bb8f1;
@@ -355,7 +358,7 @@ ul {
 .search {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   border-bottom: 1px solid var(--color-lighter-grey);
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -393,6 +396,11 @@ ul {
 .search__input::placeholder {
   color: var(--color-light-grey);
 }
+@media (min-width: 600px) {
+  .search__input {
+    width: 80%;
+  }
+}
 @media (max-width: 599px) {
   .search__input {
     width: 100%;
@@ -410,9 +418,14 @@ ul {
   font-weight: var(--fw-6);
   text-decoration: underline;
 }
-@media (max-width: 599px) {
+@media (min-width: 600px) {
   .search__clear-btn {
     font-size: clamp(1.2rem, 2vw, 2rem);
+  }
+}
+@media (max-width: 599px) {
+  .search__clear-btn {
+    font-size: clamp(1.2rem, 1.8vw, 2rem);
   }
 }
 
@@ -435,6 +448,7 @@ ul {
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
+  --note-color: #0e0f11;
   --inputs-bg-color: #f2f2f2;
   --button-color: #fff;
   --button-bg-color: #8bb8f1;
@@ -641,17 +655,29 @@ ul {
     width: 17px;
   }
 }
-.transactions__edit-icon {
-  transition: var(--transition-timing);
-}
-.transactions__edit-icon:hover {
-  color: blue;
-}
 .transactions__delete-icon {
   transition: var(--transition-timing);
 }
 .transactions__delete-icon:hover {
   color: var(--color-red);
+}
+.transactions__note {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  font-size: 1.5rem;
+  color: var(--note-color);
+  transition: var(--transition-timing);
+}
+@media (min-width: 600px) {
+  .transactions__note {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+  }
+}
+@media (max-width: 599px) {
+  .transactions__note {
+    font-size: clamp(0.8rem, 2vw, 1.2rem);
+  }
 }
 
 #inputs__arrow-checkbox {
@@ -789,6 +815,7 @@ body.app--isDark {
   --scrollbar-color: #f7f7f71e;
   --transaction-item-color: #fff;
   --transaction-item-bg: #f7f7f70c;
+  --note-color: #b6b6b6;
   --inputs-bg-color: #f7f7f70c;
   --button-color: #121212;
   --button-bg-color: #fff;

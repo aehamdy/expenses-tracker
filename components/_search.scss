@@ -4,7 +4,7 @@
 .search {
   display: flex;
   justify-content: space-between;
-  align-items: end;
+  align-items: center;
   border-bottom: 1px solid var(--color-lighter-grey);
   margin-bottom: 10px;
   padding-bottom: 10px;
@@ -44,6 +44,10 @@
       color: var(--color-light-grey);
     }
 
+    @include screens(medium-screen) {
+      width: 80%;
+    }
+
     @include screens(phone-only) {
       width: 100%;
     }
@@ -62,8 +66,12 @@
       text-decoration: underline;
     }
 
-    @include screens(phone-only) {
+    @include screens(medium-screen) {
       font-size: clamp(1.2rem, 2vw, 2rem);
+    }
+
+    @include screens(phone-only) {
+      font-size: clamp(1.2rem, 1.8vw, 2rem);
     }
   }
 }
