@@ -1,12 +1,11 @@
 import { addBtn, body, headerToggle } from "./scripts/elements.js";
-import { addTransaction, checkTheme, editAll, initOnStart, saveToStorage } from "./scripts/utils.js";
+import { addTransaction, checkTheme, initOnStart, saveToStorage } from "./scripts/utils.js";
 
 
 
 window.addEventListener("DOMContentLoaded", () => {
   checkTheme();
   initOnStart();
-  editAll();
   
   });
 
@@ -26,8 +25,8 @@ addBtn.addEventListener("click", addTransaction);
     [x] Get saved data when app loads
     [x] Get theme on loading app
     [x] Delete expenses and save to storage
-    [ ] Edit expenses and save to storage
-    [ ] Show results in overview section
-    [ ] Clear history functionality
+    [x] Edit expenses and save to storage
+    [x] Clear history functionality
     [ ] Search by name/date functionality
+    [ ] Show results in overview section
 */

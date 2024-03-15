@@ -1,4 +1,11 @@
-import { amountField, categoryField, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
+import { amountField, categoryField, clearBtn, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
+
+const clearHistory = () => {
+    transactionsList.innerHTML = "";
+    localStorage.removeItem("exp-trans");
+}
+
+clearBtn.addEventListener("click", clearHistory);
 
 export const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
@@ -55,7 +62,7 @@ export const addTransaction = () => {
 
 };
 
-export const edit = (e, index, el) => {
+export const editTransaction = (e, index, el) => {
 
     e.target.style.border = "1px dashed blue";
     e.target.contentEditable = true;
@@ -78,22 +85,22 @@ export const edit = (e, index, el) => {
         saveToStorage("exp-trans", data);
         renderTransactions(data);
         e.target.style.border = "none";
-        editAll();
+        getElementsToEdit();
     })
 };
 
-export const editAll = () => {
+export const getElementsToEdit = () => {
     getTransactionsName().forEach((item, index) => {
-        item.addEventListener("click", e => edit(e, index));
+        item.addEventListener("click", e => editTransaction(e, index));
       });
       getTransactionsAmount().forEach((item, index) => {
-        item.addEventListener("click", e => edit(e, index));
+        item.addEventListener("click", e => editTransaction(e, index));
       });
       getTransactionsDate().forEach((item, index) => {
-        item.addEventListener("click", e => edit(e, index));
+        item.addEventListener("click", e => editTransaction(e, index));
       });
       getTransactionsTime().forEach((item, index) => {
-        item.addEventListener("click", e => edit(e, index));
+        item.addEventListener("click", e => editTransaction(e, index));
       });
 }
 
@@ -167,6 +174,7 @@ export const initOnStart = () => {
     const data = getFromStorage("exp-trans");
 
     renderTransactions(data);
+    getElementsToEdit();
 };
 
 export const attachDeleteBtnListeners = () => {
