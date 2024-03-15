@@ -38,12 +38,13 @@ const search = (e) => {
     const value = e.target.value.toLowerCase();
     lis.forEach(li => {
         li.style.border = "none";
+        li.classList.add("hide");
         if(li.querySelector(".transactions__name").textContent.toLowerCase().includes(value) || li.querySelector(".transactions__date").textContent.includes(value)) {
-            console.log("existing");
+            li.classList.remove("hide");
             li.style.border = "1px solid yellow";
         } 
         if (value === "") {
-            lis.forEach(li => li.style.border = "none")
+            lis.forEach(li => li.style.border = "none", li.classList.remove("hide"));
         }
     })
 }

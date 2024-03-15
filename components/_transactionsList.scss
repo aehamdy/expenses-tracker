@@ -32,6 +32,10 @@
     border-radius: 6px;
     color: var(--transaction-item-color);
     background-color: var(--transaction-item-bg);
+
+    &.hide {
+      display: none;
+    }
   }
 
   &__type {

@@ -400,6 +400,7 @@ ul {
 }
 .search__clear-btn {
   all: unset;
+  font-size: 1.7rem;
   font-weight: var(--fw-5);
   color: var(--color-red);
   cursor: pointer;
@@ -491,6 +492,9 @@ ul {
   border-radius: 6px;
   color: var(--transaction-item-color);
   background-color: var(--transaction-item-bg);
+}
+.transactions__item.hide {
+  display: none;
 }
 .transactions__type {
   display: flex;
