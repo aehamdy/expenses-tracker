@@ -32,10 +32,12 @@
     all: unset;
     font-family: var(--fm-secondary);
     font-weight: var(--fw-3);
+    color: var(--logo-color);
     width: 100%;
     padding: 6px 0 6px 28px;
     border: 1px solid var(--color-lighter-grey);
     border-radius: 6px;
+    caret-color: var(--caret-color);
     cursor: text;
 
     &::placeholder {

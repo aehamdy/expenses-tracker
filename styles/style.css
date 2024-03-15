@@ -13,6 +13,7 @@
   --toggle-bg-color: #171717;
   --overview-heading-color: #171717;
   --overview-item-color: #171717;
+  --caret-color: #0e0f11;
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
@@ -209,6 +210,7 @@ ul {
   --toggle-bg-color: #171717;
   --overview-heading-color: #171717;
   --overview-item-color: #171717;
+  --caret-color: #0e0f11;
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
@@ -317,6 +319,7 @@ ul {
   --toggle-bg-color: #171717;
   --overview-heading-color: #171717;
   --overview-item-color: #171717;
+  --caret-color: #0e0f11;
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
@@ -379,10 +382,12 @@ ul {
   all: unset;
   font-family: var(--fm-secondary);
   font-weight: var(--fw-3);
+  color: var(--logo-color);
   width: 100%;
   padding: 6px 0 6px 28px;
   border: 1px solid var(--color-lighter-grey);
   border-radius: 6px;
+  caret-color: var(--caret-color);
   cursor: text;
 }
 .search__input::placeholder {
@@ -425,6 +430,7 @@ ul {
   --toggle-bg-color: #171717;
   --overview-heading-color: #171717;
   --overview-item-color: #171717;
+  --caret-color: #0e0f11;
   --scrollbar-color: #8bb8f1;
   --transaction-item-color: #171717;
   --transaction-item-bg: #f7f7f7;
@@ -775,6 +781,7 @@ body.app--isDark {
   --overview-heading-color: #fff;
   --overview-item-color: #fff;
   --color-lighter-grey: #f7f7f728;
+  --caret-color: #fff;
   --scrollbar-color: #f7f7f71e;
   --transaction-item-color: #fff;
   --transaction-item-bg: #f7f7f70c;

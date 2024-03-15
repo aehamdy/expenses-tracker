@@ -28,5 +28,5 @@ addBtn.addEventListener("click", addTransaction);
     [x] Delete expenses and save to storage
     [x] Search by name/date functionality
     [x] Show results in overview section
-    [ ] Validation on adding task
+    [x] Validation on adding task
 */
