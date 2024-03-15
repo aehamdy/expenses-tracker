@@ -1,5 +1,38 @@
 import { amountField, categoryField, clearBtn, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, searchBtn, timeField, transactionsList } from "./elements.js";
 
+export const updateOverview = () => {
+    let income = 0, expenses = 0, balance = 0, savings = 0;
+    const lis = document.querySelectorAll(".transactions__amount")
+    const pattern = /-?\$?(\d+(\.\d+)?|\.\d+)/
+    
+    lis.forEach(li => {
+        const match = li.innerText.match(pattern);
+
+        if (match) {
+            const stringNum = match[0].replace(/[^d.-]/d, "");
+            const value = parseFloat(stringNum);
+
+            if (li.classList.contains("transactions__amount-income")) {
+                income += value;
+            } else if (li.classList.contains("transactions__amount-expenses")) {
+                expenses += -value;
+            } else if (li.classList.contains("transactions__amount-savings")) {
+                savings += value;
+            }
+        }
+    });
+    balance = income - expenses;
+
+    const incomeField = document.querySelector(".overview__total-income");
+    const expensesField = document.querySelector(".overview__total-expenses");
+    const balanceField = document.querySelector(".overview__total-balance");
+    const savingsField = document.querySelector(".overview__total-savings");
+    incomeField.innerText = "$"+income;
+    expensesField.innerText = "$"+expenses;
+    balanceField.innerText = "$"+balance;
+    savingsField.innerText = "$"+savings;
+};
+
 const search = (e) => {
     const lis = transactionsList.querySelectorAll(".transactions__item");
     const value = e.target.value.toLowerCase();
@@ -20,6 +53,7 @@ searchBtn.addEventListener("keyup", e => search(e));
 const clearList = () => {
     transactionsList.innerHTML = "";
     localStorage.removeItem("exp-trans");
+    updateOverview();
 }
 
 clearBtn.addEventListener("click", clearList);
@@ -35,6 +69,7 @@ export const saveToStorage = function (key, value) {
 
 const displayTransactions = (list) => {
     transactionsList.innerHTML = list;
+    updateOverview();
 };
 
 export const addTransaction = () => {

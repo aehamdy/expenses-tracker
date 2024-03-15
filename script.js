@@ -1,12 +1,11 @@
 import { addBtn, body, headerToggle } from "./scripts/elements.js";
-import { addTransaction, checkTheme, initOnStart, saveToStorage } from "./scripts/utils.js";
+import { addTransaction, checkTheme, initOnStart, saveToStorage, updateOverview } from "./scripts/utils.js";
 
 
 
 window.addEventListener("DOMContentLoaded", () => {
   checkTheme();
   initOnStart();
-  
   });
 
 headerToggle.addEventListener("click", () => {
@@ -27,6 +26,7 @@ addBtn.addEventListener("click", addTransaction);
     [x] Edit expenses and save to storage
     [x] Clear list functionality
     [x] Delete expenses and save to storage
-    [ ] Search by name/date functionality
-    [ ] Show results in overview section
+    [x] Search by name/date functionality
+    [x] Show results in overview section
+    [ ] Validation on adding task
 */
