@@ -70,6 +70,7 @@ export const saveToStorage = function (key, value) {
 const displayTransactions = (list) => {
     transactionsList.innerHTML = list;
     updateOverview();
+    getElementsToEdit();
 };
 
 export const addTransaction = () => {
@@ -109,8 +110,7 @@ export const addTransaction = () => {
 
     renderTransactions(transactionsArray);
 
-    getEditBtns().forEach((btn, index) => {
-        btn.addEventListener("click", e => editTransaction(e, index))});
+    getElementsToEdit();
 
 };
 
