@@ -1,4 +1,21 @@
-import { amountField, categoryField, clearBtn, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
+import { amountField, categoryField, clearBtn, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, searchBtn, timeField, transactionsList } from "./elements.js";
+
+const search = (e) => {
+    const lis = transactionsList.querySelectorAll(".transactions__item");
+    const value = e.target.value.toLowerCase();
+    lis.forEach(li => {
+        li.style.border = "none";
+        if(li.querySelector(".transactions__name").textContent.toLowerCase().includes(value) || li.querySelector(".transactions__date").textContent.includes(value)) {
+            console.log("existing");
+            li.style.border = "1px solid yellow";
+        } 
+        if (value === "") {
+            lis.forEach(li => li.style.border = "none")
+        }
+    })
+}
+
+searchBtn.addEventListener("keyup", e => search(e));
 
 const clearList = () => {
     transactionsList.innerHTML = "";

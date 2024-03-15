@@ -26,7 +26,7 @@ addBtn.addEventListener("click", addTransaction);
     [x] Get theme on loading app
     [x] Edit expenses and save to storage
     [x] Clear list functionality
-    [ ] Delete expenses and save to storage
+    [x] Delete expenses and save to storage
     [ ] Search by name/date functionality
     [ ] Show results in overview section
 */

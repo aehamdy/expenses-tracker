@@ -9,6 +9,7 @@ export const timeField = document.querySelector(".inputs__time");
 export const transactionsList = document.querySelector(".transactions__list");
 export const addBtn = document.querySelector(".inputs__add-btn");
 export const clearBtn = document.querySelector(".search__clear-btn");
+export const searchBtn = document.querySelector(".search__input");
 
 export const getDeleteBtns = () => document.querySelectorAll(".transactions__delete");
 export const getTransactionsName = () => document.querySelectorAll(".transactions__name")
