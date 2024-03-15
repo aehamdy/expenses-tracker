@@ -80,6 +80,7 @@ ul {
   border-radius: 16px;
 }
 .tracker__wrapper {
+  overflow: hidden;
   height: 95vh;
   width: 90%;
   display: flex;
@@ -683,11 +684,46 @@ ul {
 #inputs__arrow-checkbox {
   appearance: none;
 }
+@media (min-width: 600px) and (max-width: 1200px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: 20px;
+  }
+}
+@media (max-width: 1125px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: 0;
+  }
+}
+@media (max-width: 651px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: -20px;
+  }
+}
+@media (max-width: 599px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: -85px;
+  }
+}
+@media (max-width: 465px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: -129px;
+  }
+}
+@media (max-width: 380px) {
+  #inputs__arrow-checkbox:checked + .inputs__arrow {
+    top: -205px;
+  }
+}
+#inputs__arrow-checkbox:checked + .inputs__arrow > .inputs__arrow-icon {
+  transform: rotate(180deg);
+}
 
 .inputs {
   position: relative;
 }
 .inputs__arrow {
+  display: flex;
+  justify-content: center;
   position: absolute;
   width: 22px;
   height: 22px;
@@ -698,15 +734,41 @@ ul {
   background-color: var(--transaction-item-bg);
   z-index: 1;
   cursor: pointer;
+  transition: var(--transition-timing);
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .inputs__arrow {
+    top: 100px;
+    width: 30px;
+    height: 30px;
+  }
 }
 @media (min-width: 1200px) {
   .inputs__arrow {
     display: none;
   }
 }
+@media (max-width: 599px) {
+  .inputs__arrow {
+    top: 30px;
+    width: 28px;
+    height: 28px;
+  }
+}
 .inputs__arrow-icon {
   color: var(--logo-color);
   width: 22px;
+  transition: var(--transition-timing);
+}
+@media (min-width: 600px) and (max-width: 1200px) {
+  .inputs__arrow-icon {
+    width: 30px;
+  }
+}
+@media (max-width: 599px) {
+  .inputs__arrow-icon {
+    width: 28px;
+  }
 }
 .inputs__wrapper {
   display: flex;
@@ -722,15 +784,13 @@ ul {
 }
 @media (min-width: 600px) and (max-width: 1200px) {
   .inputs__wrapper {
-    top: 95px;
-    display: none;
+    bottom: -100%;
     opacity: 0;
   }
 }
 @media (max-width: 599px) {
   .inputs__wrapper {
-    top: 25px;
-    display: none;
+    bottom: -100%;
     opacity: 0;
   }
 }

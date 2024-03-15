@@ -9,6 +9,7 @@
   border-radius: 16px;
 
   &__wrapper {
+    overflow: hidden;
     height: 95vh;
     width: 90%;
     display: flex;

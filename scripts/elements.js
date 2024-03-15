@@ -10,6 +10,9 @@ export const transactionsList = document.querySelector(".transactions__list");
 export const addBtn = document.querySelector(".inputs__add-btn");
 export const clearBtn = document.querySelector(".search__clear-btn");
 export const searchBtn = document.querySelector(".search__input");
+export const arrow = document.querySelector(".inputs__arrow");
+export const inputsViewer = document.getElementById("inputs__arrow-checkbox")
+export const inputsWrapper = document.querySelector(".inputs__wrapper");
 
 export const getDeleteBtns = () => document.querySelectorAll(".transactions__delete");
 export const getTransactionsName = () => document.querySelectorAll(".transactions__name")

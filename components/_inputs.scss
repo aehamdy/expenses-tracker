@@ -2,23 +2,44 @@
 
 #inputs__arrow-checkbox {
   appearance: none;
+
+  &:checked + .inputs__arrow {
+    @include screens(medium-to-large) {
+      top: 20px;
+    }
+
+    @include screens(to-1125) {
+      top: 0;
+    }
+
+    @include screens(to-651) {
+      top: -20px;
+    }
+
+    @include screens(phone-only) {
+      top: -85px;
+    }
+
+    @include screens(to-465) {
+      top: -129px;
+    }
+
+    @include screens(to-380) {
+      top: -205px;
+    }
+  }
+
+  &:checked + .inputs__arrow > .inputs__arrow-icon {
+    transform: rotate(180deg);
+  }
 }
 
 .inputs {
   position: relative;
-  // display: flex;
-  // justify-content: space-between;
-  // align-items: center;
-  // flex-wrap: wrap;
-  // gap: 10px;
-  // position: relative;
-  // padding: 16px 18px;
-  // background-color: #f2f2f2;
-  // // background-color: #6fb7a931;
-  // // background-color: var(--color-body);
-  // border-radius: 8px;
 
   &__arrow {
+    display: flex;
+    justify-content: center;
     position: absolute;
     width: 22px;
     height: 22px;
@@ -29,15 +50,35 @@
     background-color: var(--transaction-item-bg);
     z-index: 1;
     cursor: pointer;
+    transition: var(--transition-timing);
+
+    @include screens(medium-to-large) {
+      top: 100px;
+      @include set-size(30px, 30px);
+    }
 
     @include screens(large-screen) {
       display: none;
+    }
+
+    @include screens(phone-only) {
+      top: 30px;
+      @include set-size(28px, 28px);
     }
   }
 
   &__arrow-icon {
     color: var(--logo-color);
     width: 22px;
+    transition: var(--transition-timing);
+
+    @include screens(medium-to-large) {
+      @include set-size(30px);
+    }
+
+    @include screens(phone-only) {
+      @include set-size(28px);
+    }
   }
 
   &__wrapper {
@@ -53,16 +94,20 @@
     transition: var(--transition-timing);
 
     @include screens(medium-to-large) {
-      top: 95px;
-      display: none;
+      bottom: -100%;
+      // visibility: hidden;
       opacity: 0;
     }
 
     @include screens(phone-only) {
-      top: 25px;
-      display: none;
+      bottom: -100%;
       opacity: 0;
     }
+
+    // @include screens(to-465) {
+    //   bottom: -100%;
+    //   opacity: 0;
+    // }
   }
 
   &__category,

@@ -1,10 +1,26 @@
 @mixin screens($size) {
-  @if $size == phone-only {
+  @if $size == to-380 {
+    @media (max-width: 380px) {
+      @content;
+    }
+  } @else if $size == to-465 {
+    @media (max-width: 465px) {
+      @content;
+    }
+  } @else if $size == phone-only {
     @media (max-width: 599px) {
       @content;
     }
   } @else if $size == medium-screen {
     @media (min-width: 600px) {
+      @content;
+    }
+  } @else if $size == to-651 {
+    @media (max-width: 651px) {
+      @content;
+    }
+  } @else if $size == to-1125 {
+    @media (max-width: 1125px) {
       @content;
     }
   } @else if $size == medium-to-large {
@@ -15,5 +31,14 @@
     @media (min-width: 1200px) {
       @content;
     }
+  }
+}
+
+@mixin set-size($width, $height: null) {
+  @if height {
+    width: $width;
+    height: $height;
+  } @else {
+    width: $width;
   }
 }
