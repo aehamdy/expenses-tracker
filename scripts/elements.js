@@ -10,3 +10,8 @@ export const transactionsList = document.querySelector(".transactions__list");
 export const addBtn = document.querySelector(".inputs__add-btn");
 
 export const getDeleteBtns = () => document.querySelectorAll(".transactions__delete");
+export const getTransactionsName = () => document.querySelectorAll(".transactions__name")
+export const getTransactionsAmount = () => document.querySelectorAll(".transactions__amount")
+export const getTransactionsDate = () => document.querySelectorAll(".transactions__date")
+export const getTransactionsTime = () => document.querySelectorAll(".transactions__time")
+export const getEditBtns = () => document.querySelectorAll(".transactions__edit");

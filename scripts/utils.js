@@ -1,6 +1,6 @@
-import { amountField, categoryField, dateField, getDeleteBtns, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
+import { amountField, categoryField, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
 
-const getFromStorage = function (key) {
+export const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
     return data ? JSON.parse(data) : false;
 };
@@ -50,7 +50,52 @@ export const addTransaction = () => {
 
     renderTransactions(transactionsArray);
 
+    getEditBtns().forEach((btn, index) => {
+        btn.addEventListener("click", e => editTransaction(e, index))});
+
 };
+
+export const edit = (e, index, el) => {
+
+    e.target.style.border = "1px dashed blue";
+    e.target.contentEditable = true;
+
+    e.target.addEventListener("blur", () => {
+        e.target.style.border = "none";
+        const newValue = e.target.textContent.trim();
+        const data = getFromStorage("exp-trans");
+
+        if (e.target.classList.contains("transactions__amount")) {
+            data[index].amount = newValue;
+        } else if (e.target.classList.contains("transactions__name")) {
+            data[index].name = newValue;
+        } else if (e.target.classList.contains("transactions__date")) {
+            data[index].date = newValue;
+        } else if (e.target.classList.contains("transactions__time")) {
+            data[index].time = newValue;
+        }
+
+        saveToStorage("exp-trans", data);
+        renderTransactions(data);
+        e.target.style.border = "none";
+        editAll();
+    })
+};
+
+export const editAll = () => {
+    getTransactionsName().forEach((item, index) => {
+        item.addEventListener("click", e => edit(e, index));
+      });
+      getTransactionsAmount().forEach((item, index) => {
+        item.addEventListener("click", e => edit(e, index));
+      });
+      getTransactionsDate().forEach((item, index) => {
+        item.addEventListener("click", e => edit(e, index));
+      });
+      getTransactionsTime().forEach((item, index) => {
+        item.addEventListener("click", e => edit(e, index));
+      });
+}
 
 export const renderTransactions = (transactionsArray) => {
     let li = "";
