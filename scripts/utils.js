@@ -80,6 +80,12 @@ const removeInvalidClass = () => {
     amountField.classList.contains("invalid") && amountField.classList.remove("invalid");
 }
 
+const clearALlInputs = () => {
+    [categoryField, nameField, amountField, dateField, timeField].forEach(field => {
+        field.value = "";
+    })
+}
+
 export const addTransaction = () => {
 
     removeInvalidClass();
@@ -96,11 +102,11 @@ export const addTransaction = () => {
     } else if (!nameField.value) {
         nameField.classList.add("invalid");
         return;
-    } else if(!amountFieldValue || !/^\d+(\.\d{1,2})?$/.test(amountFieldValue)) {
+    } else if(!amountFieldValue || !/^\d+(\.\d+)?$/.test(amountFieldValue)) {
         amountField.classList.add("invalid");
         return;
     }
-
+    
     let categoryType, amountValue;
 
     if (catValue === "Income") {
@@ -132,6 +138,7 @@ export const addTransaction = () => {
     renderTransactions(transactionsArray);
 
     getElementsToEdit();
+    clearALlInputs();
 
 };
 
