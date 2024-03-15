@@ -1,11 +1,11 @@
 import { amountField, categoryField, clearBtn, dateField, getDeleteBtns, getEditBtns, getTransactionsAmount, getTransactionsDate, getTransactionsName, getTransactionsTime, headerToggle, nameField, timeField, transactionsList } from "./elements.js";
 
-const clearHistory = () => {
+const clearList = () => {
     transactionsList.innerHTML = "";
     localStorage.removeItem("exp-trans");
 }
 
-clearBtn.addEventListener("click", clearHistory);
+clearBtn.addEventListener("click", clearList);
 
 export const getFromStorage = function (key) {
     const data = localStorage.getItem(key);
@@ -163,6 +163,7 @@ export const renderTransactions = (transactionsArray) => {
     })
 
     displayTransactions(li);
+    attachDeleteBtnListeners();
 };
 
 export const checkTheme = () => {
@@ -186,10 +187,10 @@ export const attachDeleteBtnListeners = () => {
 };
 
 const deleteTransaction = (e, index) => {
-
+    console.log(e);
+    console.log(index);
     const data = getFromStorage("exp-trans");
     data.splice(index, 1);
     saveToStorage("exp-trans", data);
     renderTransactions(data);
-    attachDeleteBtnListeners();
 };
