@@ -83,6 +83,12 @@
     }
   }
 
+  &__category.invalid,
+  &__name.invalid,
+  &__amount.invalid {
+    border: 1px solid red;
+  }
+
   &__category {
     &:focus option:first-of-type {
       display: none;

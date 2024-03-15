@@ -712,6 +712,9 @@ ul {
     flex-basis: 20%;
   }
 }
+.inputs__category.invalid, .inputs__name.invalid, .inputs__amount.invalid {
+  border: 1px solid red;
+}
 .inputs__category:focus option:first-of-type {
   display: none;
 }

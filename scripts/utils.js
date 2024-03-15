@@ -73,21 +73,41 @@ const displayTransactions = (list) => {
     getElementsToEdit();
 };
 
+const removeInvalidClass = () => {
+    categoryField.classList.contains("invalid") && categoryField.classList.remove("invalid");
+    nameField.classList.contains("invalid") && nameField.classList.remove("invalid");
+    amountField.classList.contains("invalid") && amountField.classList.remove("invalid");
+}
+
 export const addTransaction = () => {
+
+    removeInvalidClass();
 
     const catValue = categoryField.value;
     const nameValue = nameField.value.trim().slice(0, 1).toUpperCase() + nameField.value.trim().slice(1).toLowerCase();
     const dateValue = dateField.value.trim();
     const timeValue = timeField.value.trim()
+    const amountFieldValue = amountField.value.trim();
+
+    if (!catValue) {
+        categoryField.classList.add("invalid");
+        return;
+    } else if (!nameField.value) {
+        nameField.classList.add("invalid");
+        return;
+    } else if(!amountFieldValue || !/^\d+(\.\d{1,2})?$/.test(amountFieldValue)) {
+        amountField.classList.add("invalid");
+        return;
+    }
 
     let categoryType, amountValue;
-    
+
     if (catValue === "Income") {
         categoryType = "transactions__amount-income"
         amountValue = `+$${amountField.value.trim()}`
     } else if (catValue === "Savings") {
         categoryType ="transactions__amount-savings"
-        amountValue = `$${amountField.value.trim()}`
+        amountValue = `+$${amountField.value.trim()}`
     } else {
         categoryType = "transactions__amount-expenses"
         amountValue = `-$${amountField.value.trim()}`
@@ -101,11 +121,11 @@ export const addTransaction = () => {
         time: timeValue,
         catType: categoryType,
     }
-
+    
     const transactionsArray = getFromStorage("exp-trans") || [];
 
     transactionsArray.unshift(transaction);
-    
+
     saveToStorage("exp-trans", transactionsArray);
 
     renderTransactions(transactionsArray);
@@ -239,8 +259,7 @@ export const attachDeleteBtnListeners = () => {
 };
 
 const deleteTransaction = (e, index) => {
-    console.log(e);
-    console.log(index);
+
     const data = getFromStorage("exp-trans");
     data.splice(index, 1);
     saveToStorage("exp-trans", data);
