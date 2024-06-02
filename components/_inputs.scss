@@ -63,7 +63,6 @@
 
     @include screens(phone-only) {
       top: 30px;
-      background-color: #4e4a4a;
       @include set-size(28px, 28px);
     }
   }
@@ -102,13 +101,7 @@
     @include screens(phone-only) {
       bottom: -100%;
       opacity: 0;
-      background-color: #4e4a4ac4;
     }
-
-    // @include screens(to-465) {
-    //   bottom: -100%;
-    //   opacity: 0;
-    // }
   }
 
   &__category,

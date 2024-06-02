@@ -751,7 +751,6 @@ ul {
 @media (max-width: 599px) {
   .inputs__arrow {
     top: 30px;
-    background-color: #4e4a4a;
     width: 28px;
     height: 28px;
   }
@@ -793,7 +792,6 @@ ul {
   .inputs__wrapper {
     bottom: -100%;
     opacity: 0;
-    background-color: rgba(78, 74, 74, 0.768627451);
   }
 }
 .inputs__category, .inputs__name, .inputs__amount, .inputs__date, .inputs__time {

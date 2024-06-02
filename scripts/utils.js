@@ -187,7 +187,7 @@ export const getElementsToEdit = () => {
 export const renderTransactions = (transactionsArray) => {
     let li = "";
   
-    transactionsArray.forEach(item => {
+    transactionsArray.map(item => {
   
      li += `<li class="transactions__item">
         <div class="transactions__type">
